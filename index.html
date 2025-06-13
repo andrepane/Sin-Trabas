@@ -5,42 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIN TRABAS - Ayuda para la disfemia</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom CSS for elements that need more precise control */
-        .section {
-            display: none;
-        }
-        .section.active {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .technique-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .speech-bubble {
-            position: relative;
-            background: #e2f3ff;
-            border-radius: 0.4em;
-        }
-        .speech-bubble:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border: 10px solid transparent;
-            border-top-color: #e2f3ff;
-            border-bottom: 0;
-            margin-left: -10px;
-            margin-bottom: -10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-blue-50 font-sans">
     <!-- Header/Navigation -->
@@ -275,6 +240,15 @@
                                     <li>Practicar con palabras que normalmente causan bloqueos</li>
                                 </ul>
                             </div>
+    <div class="mt-4">
+        <p id="soft-start-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
+        <div class="flex gap-2">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('soft-start')">Frase</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('soft-start')">Grabar</button>
+            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('soft-start')">Detener</button>
+        </div>
+        <p id="soft-start-result" class="text-sm text-blue-700 mt-1"></p>
+    </div>
                         </div>
                         <div class="md:w-1/3">
                             <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
@@ -319,6 +293,15 @@
                                     <li>Hablar conectando todas las palabras con un ligero arrastre</li>
                                 </ul>
                             </div>
+    <div class="mt-4">
+        <p id="smoothing-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
+        <div class="flex gap-2">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('smoothing')">Frase</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('smoothing')">Grabar</button>
+            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('smoothing')">Detener</button>
+        </div>
+        <p id="smoothing-result" class="text-sm text-blue-700 mt-1"></p>
+    </div>
                         </div>
                         <div class="md:w-1/3">
                             <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
@@ -363,6 +346,15 @@
                                 </ul>
                             </div>
                         </div>
+    <div class="mt-4">
+        <p id="slow-down-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
+        <div class="flex gap-2">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('slow-down')">Frase</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('slow-down')">Grabar</button>
+            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('slow-down')">Detener</button>
+        </div>
+        <p id="slow-down-result" class="text-sm text-blue-700 mt-1"></p>
+    </div>
                         <div class="md:w-1/3">
                             <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
                                 <div class="text-8xl mb-4">🐢</div>
@@ -411,6 +403,15 @@
                                     <li>Practicar en conversaciones controladas con un compañero</li>
                                 </ul>
                             </div>
+    <div class="mt-4">
+        <p id="stop-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
+        <div class="flex gap-2">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('stop')">Frase</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('stop')">Grabar</button>
+            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('stop')">Detener</button>
+        </div>
+        <p id="stop-result" class="text-sm text-blue-700 mt-1"></p>
+    </div>
                         </div>
                         <div class="md:w-1/3">
                             <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
@@ -421,6 +422,158 @@
                     </div>
                 </div>
             </div>
+<div id="generalization-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
+    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Volver a técnicas
+    </button>
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">Generalización</h2>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-2/3">
+            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
+            <p class="mb-4 text-gray-700">Aplicar las técnicas en diferentes contextos y situaciones reales.</p>
+            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
+            <div class="bg-blue-50 rounded-lg p-4">
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>Practicar en llamadas telefónicas</li>
+                    <li>Usar las técnicas al hablar en público</li>
+                    <li>Registrar experiencias diarias aplicando la estrategia</li>
+                </ul>
+            </div>
+            <div class="mt-4">
+                <p id="generalization-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
+                <div class="flex gap-2">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('generalization')">Frase</button>
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('generalization')">Grabar</button>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('generalization')">Detener</button>
+                </div>
+                <p id="generalization-result" class="text-sm text-blue-700 mt-1"></p>
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
+                <div class="text-8xl mb-4">🌐</div>
+                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Integra la práctica en tu día a día para consolidar resultados.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="continuous-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
+    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Volver a técnicas
+    </button>
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">Fonación continuada</h2>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-2/3">
+            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
+            <p class="mb-4 text-gray-700">Consiste en mantener el flujo de voz entre palabras para evitar bloqueos.</p>
+            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
+            <div class="bg-blue-50 rounded-lg p-4">
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>Pronunciar listas de palabras sin cortar el aire</li>
+                    <li>Leer párrafos enlazando cada oración</li>
+                    <li>Hacer monólogos breves manteniendo la fonación</li>
+                </ul>
+            </div>
+            <div class="mt-4">
+                <p id="continuous-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
+                <div class="flex gap-2">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('continuous')">Frase</button>
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('continuous')">Grabar</button>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('continuous')">Detener</button>
+                </div>
+                <p id="continuous-result" class="text-sm text-blue-700 mt-1"></p>
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
+                <div class="text-8xl mb-4">➿</div>
+                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Imagina que tu voz es una cinta que no se corta.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="intonation-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
+    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Volver a técnicas
+    </button>
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">Entonación</h2>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-2/3">
+            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
+            <p class="mb-4 text-gray-700">Utiliza variaciones melódicas para facilitar la fluidez y reducir tensiones.</p>
+            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
+            <div class="bg-blue-50 rounded-lg p-4">
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>Cantar frases simples variando el tono</li>
+                    <li>Leer en voz alta imitando distintas emociones</li>
+                    <li>Subir y bajar la voz en cada oración</li>
+                </ul>
+            </div>
+            <div class="mt-4">
+                <p id="intonation-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
+                <div class="flex gap-2">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('intonation')">Frase</button>
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('intonation')">Grabar</button>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('intonation')">Detener</button>
+                </div>
+                <p id="intonation-result" class="text-sm text-blue-700 mt-1"></p>
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
+                <div class="text-8xl mb-4">🎵</div>
+                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Exagera la melodía para luego ajustar a un tono natural.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="breathing-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
+    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Volver a técnicas
+    </button>
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">Coordinación fono-respiratoria</h2>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-2/3">
+            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
+            <p class="mb-4 text-gray-700">Se enfoca en sincronizar la respiración con la voz para evitar tensiones y bloqueos.</p>
+            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
+            <div class="bg-blue-50 rounded-lg p-4">
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>Inspirar profundamente y hablar al exhalar</li>
+                    <li>Señalar dónde tomar aire en lecturas</li>
+                    <li>Detenerse un instante antes de comenzar a hablar</li>
+                </ul>
+            </div>
+            <div class="mt-4">
+                <p id="breathing-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
+                <div class="flex gap-2">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('breathing')">Frase</button>
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('breathing')">Grabar</button>
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('breathing')">Detener</button>
+                </div>
+                <p id="breathing-result" class="text-sm text-blue-700 mt-1"></p>
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
+                <div class="text-8xl mb-4">🌬️</div>
+                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Deja que tu respiración marque el ritmo de tus palabras.</p>
+            </div>
+        </div>
+    </div>
+</div>
         </section>
 
         <!-- Exercises Section -->
@@ -503,6 +656,10 @@
                             <option value="soft-start">Inicio suave</option>
                             <option value="smoothing">Suavización</option>
                             <option value="slow-down">Enlentecimiento</option>
+                            <option value="breathing">Coordinación fono-respiratoria</option>
+                            <option value="intonation">Entonación</option>
+                            <option value="continuous">Fonación continuada</option>
+                            <option value="generalization">Generalización</option>
                             <option value="stop">Técnica STOP</option>
                         </select>
                     </div>
@@ -666,244 +823,7 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 
-    <script>
-        // Section navigation
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Hide technique details if showing
-            document.getElementById('technique-details').classList.add('hidden');
-            document.querySelectorAll('.technique-detail').forEach(detail => {
-                detail.classList.remove('technique-detail');
-            });
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-        
-        // Technique details
-        function showTechnique(technique) {
-            document.getElementById('techniques').classList.remove('active');
-            document.getElementById('technique-details').classList.remove('hidden');
-            document.getElementById(`${technique}-detail`).classList.add('technique-detail');
-            window.scrollTo(0, 0);
-        }
-        
-        function hideTechnique() {
-            document.getElementById('technique-details').classList.add('hidden');
-            document.querySelectorAll('.technique-detail').forEach(detail => {
-                detail.classList.remove('technique-detail');
-            });
-            document.getElementById('techniques').classList.add('active');
-        }
-        
-        // Exercises - Syllable Generator
-        let currentDifficulty = 'easy';
-        
-        function setDifficulty(level) {
-            currentDifficulty = level;
-            // Update button styles
-            document.querySelectorAll('.difficulty-btn').forEach(btn => {
-                btn.classList.remove('bg-blue-500', 'text-white');
-                btn.classList.add('bg-blue-100', 'text-blue-800');
-            });
-            event.target.classList.remove('bg-blue-100', 'text-blue-800');
-            event.target.classList.add('bg-blue-500', 'text-white');
-        }
-        
-        const easySyllables = ['ba', 'be', 'bi', 'bo', 'bu', 'pa', 'pe', 'pi', 'po', 'pu', 'ma', 'me', 'mi', 'mo', 'mu'];
-        const mediumSyllables = ['bra', 'bre', 'bri', 'bro', 'bru', 'pla', 'ple', 'pli', 'plo', 'plu', 'tra', 'tre', 'tri', 'tro', 'tru'];
-        const hardSyllables = ['spla', 'sple', 'spli', 'splo', 'splu', 'stra', 'stre', 'stri', 'stro', 'stru', 'scra', 'scre', 'scri', 'scro', 'scru'];
-        
-        function generateSyllables() {
-            let syllables = [];
-            let count = 0;
-            
-            switch(currentDifficulty) {
-                case 'easy':
-                    syllables = easySyllables;
-                    count = 4;
-                    break;
-                case 'medium':
-                    syllables = mediumSyllables;
-                    count = 4;
-                    break;
-                case 'hard':
-                    syllables = hardSyllables;
-                    count = 3;
-                    break;
-            }
-            
-            let result = [];
-            for(let i = 0; i < count; i++) {
-                const randomIndex = Math.floor(Math.random() * syllables.length);
-                result.push(syllables[randomIndex]);
-            }
-            
-            document.getElementById('syllable-display').textContent = result.join(' - ');
-        }
-        
-        function hideSyllable() {
-            document.getElementById('syllable-display').textContent = '😊 Intenta decirlo en tu mente primero';
-            setTimeout(() => {
-                document.getElementById('syllable-display').textContent = 'Presiona "Generar" para comenzar';
-            }, 1500);
-        }
-        
-        // Exercises - Conversation Topics
-        let currentAgeGroup = 'adult';
-        
-        const childTopics = [
-            "Habla sobre tu juguete favorito y por qué te gusta",
-            "Describe qué hiciste el fin de semana pasado",
-            "Cuenta qué te gusta hacer con tus amigos",
-            "Explica cómo es tu animal favorito",
-            "Habla sobre tu comida preferida y por qué"
-        ];
-        
-        const teenTopics = [
-            "Discute sobre tu serie o película favorita",
-            "Habla sobre qué te gustaría estudiar en el futuro",
-            "Comenta sobre un problema social que te preocupe",
-            "Describe cómo sería tu día perfecto",
-            "Habla sobre alguien que admiras y por qué"
-        ];
-        
-        const adultTopics = [
-            "Describe tu trabajo o estudios actuales",
-            "Habla sobre un libro que te haya impactado",
-            "Comenta sobre los desafíos de ser padre/madre (si aplica)",
-            "Discute sobre un viaje que te gustaría hacer",
-            "Habla sobre cómo manejas el estrés en tu vida"
-        ];
-        
-        function setAgeGroup(ageGroup) {
-            currentAgeGroup = ageGroup;
-            // Update button styles
-            document.querySelectorAll('.age-btn').forEach(btn => {
-                btn.classList.remove('bg-green-500', 'text-white');
-                btn.classList.add('bg-green-100', 'text-green-800');
-            });
-            event.target.classList.remove('bg-green-100', 'text-green-800');
-            event.target.classList.add('bg-green-500', 'text-white');
-        }
-        
-        function generateTopic() {
-            let topics = [];
-            
-            switch(currentAgeGroup) {
-                case 'child':
-                    topics = childTopics;
-                    break;
-                case 'teen':
-                    topics = teenTopics;
-                    break;
-                case 'adult':
-                    topics = adultTopics;
-                    break;
-            }
-            
-            const randomIndex = Math.floor(Math.random() * topics.length);
-            document.getElementById('topic-display').textContent = topics[randomIndex];
-        }
-        
-        function hideTopic() {
-            document.getElementById('topic-display').textContent = '🤔 Piensa cómo desarrollarías este tema';
-            setTimeout(() => {
-                document.getElementById('topic-display').textContent = 'Selecciona tu edad y obtén un tema';
-            }, 1500);
-        }
-        
-        // Practice Diary
-        function savePractice() {
-            const date = document.getElementById('practice-date').value;
-            const technique = document.getElementById('technique-select').value;
-            const reflection = document.getElementById('practice-reflection').value;
-            
-            if (!date || !reflection) {
-                alert('Por favor completa todos los campos');
-                return;
-            }
-            
-            // Get technique name for display
-            let techniqueName = '';
-            switch(technique) {
-                case 'soft-start': techniqueName = 'Inicio suave'; break;
-                case 'smoothing': techniqueName = 'Suavización'; break;
-                case 'slow-down': techniqueName = 'Enlentecimiento'; break;
-                case 'stop': techniqueName = 'Técnica STOP'; break;
-            }
-            
-            // Format date
-            const formattedDate = new Date(date).toLocaleDateString('es-ES', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            
-            // Create entry
-            const entry = document.createElement('div');
-            entry.className = 'bg-white p-4 rounded-lg shadow border border-gray-200';
-            entry.innerHTML = `
-                <div class="flex justify-between items-start mb-2">
-                    <h4 class="font-semibold text-blue-600">${techniqueName}</h4>
-                    <span class="text-sm text-gray-500">${formattedDate}</span>
-                </div>
-                <p class="text-gray-700">${reflection}</p>
-            `;
-            
-            // Add to the top of the list
-            document.getElementById('practice-entries').prepend(entry);
-            
-            // Clear form
-            document.getElementById('practice-date').value = '';
-            document.getElementById('practice-reflection').value = '';
-            
-            // Show confirmation
-            alert('Práctica guardada correctamente');
-        }
-        
-        // Contact Form
-        function submitContact() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !message) {
-                alert('Por favor completa todos los campos obligatorios');
-                return;
-            }
-            
-            // In a real app, you would send this data to a server
-            // Here we'll just show a confirmation
-            const subject = document.getElementById('subject').value;
-            let subjectText = '';
-            
-            switch(subject) {
-                case 'question': subjectText = 'Consulta'; break;
-                case 'suggestion': subjectText = 'Sugerencia'; break;
-                case 'feedback': subjectText = 'Comentario'; break;
-                case 'other': subjectText = 'Otro'; break;
-            }
-            
-            alert(`Gracias ${name}, hemos recibido tu ${subjectText.toLowerCase()}. Te responderemos a ${email} pronto.`);
-            
-            // Reset form
-            document.getElementById('contact-form').reset();
-        }
-        
-        // Set today's date as default in practice diary
-        document.addEventListener('DOMContentLoaded', function() {
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('practice-date').value = today;
-        });
-    </script>
 </body>
 </html>
