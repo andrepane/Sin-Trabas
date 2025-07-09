@@ -19,7 +19,7 @@
             background: #e2f3ff;
             border-radius: 0.4em;
         }
-        .speech-bubble:after {
+.speech-bubble:after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -30,5 +30,17 @@
             border-top-color: #e2f3ff;
             border-bottom: 0;
             margin-left: -10px;
-            margin-bottom: -10px;
-        }
+    margin-bottom: -10px;
+}
+
+/* Dark mode overrides */
+.dark .bg-white { background-color: #1e293b !important; }
+.dark .bg-blue-50 { background-color: #1e293b !important; }
+.dark .bg-gray-50 { background-color: #1e293b !important; }
+.dark header { background-color: #1e40af !important; }
+.dark footer { background-color: #1e40af !important; }
+.dark input,
+.dark select,
+.dark textarea { background-color: #334155; color: #f1f5f9; border-color: #475569; }
+.dark .speech-bubble { background: #334155; }
+.dark .speech-bubble:after { border-top-color: #334155; }
