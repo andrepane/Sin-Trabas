@@ -1,3 +1,18 @@
+        // Theme toggle
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark ? '1' : '0');
+            document.getElementById('theme-toggle').textContent = isDark ? '☀️' : '🌙';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('darkMode') === '1') {
+                document.documentElement.classList.add('dark');
+                document.getElementById('theme-toggle').textContent = '☀️';
+            }
+        });
+
         // Section navigation
         function showSection(sectionId) {
             // Hide all sections
