@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel del Logopeda: Vista General</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bdeee",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111718] dark:text-white min-h-screen">
+<!-- Navigation Drawer (Overlay - Hidden by default in a real app, here shown as part of the structure) -->
+<!-- For this static UI, we'll keep the Drawer available or use it as a side menu if wide, but on mobile it's an overlay -->
+<div class="fixed inset-0 z-50 hidden" id="side-drawer">
+<div class="absolute inset-0 bg-[#141414]/40 backdrop-blur-sm" onclick="document.getElementById('side-drawer').classList.add('hidden')"></div>
+<div class="relative flex h-full w-10/12 flex-col bg-white dark:bg-background-dark p-4 shadow-2xl">
+<div class="flex items-center justify-between px-4 pb-6 pt-4 border-b border-[#dbe5e6] dark:border-white/10">
+<p class="text-[22px] font-bold leading-tight tracking-[-0.015em]">Dr. García</p>
+<span class="material-symbols-outlined cursor-pointer" onclick="document.getElementById('side-drawer').classList.add('hidden')">close</span>
+</div>
+<ul class="flex flex-col gap-2 mt-6">
+<li class="flex h-12 items-center gap-4 rounded-xl px-4 bg-primary/20 text-primary">
+<span class="material-symbols-outlined">group</span>
+<p class="text-base font-bold leading-tight truncate">Pacientes</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-xl px-4 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">description</span>
+<p class="text-base font-bold leading-tight truncate">Informes</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-xl px-4 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">folder_open</span>
+<p class="text-base font-bold leading-tight truncate">Materiales</p>
+</li>
+<li class="mt-auto flex h-12 items-center gap-4 rounded-xl px-4 text-red-500">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-base font-bold leading-tight truncate">Cerrar Sesión</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- Main Content Wrapper -->
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 flex items-center bg-background-light dark:bg-background-dark px-4 py-4 justify-between border-b border-[#dbe5e6] dark:border-white/10">
+<div class="flex items-center gap-3">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white dark:bg-white/5 border border-[#dbe5e6] dark:border-white/10" onclick="document.getElementById('side-drawer').classList.remove('hidden')">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Vista General</h2>
+</div>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded-xl bg-white dark:bg-white/5 border border-[#dbe5e6] dark:border-white/10 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
+                    DG
+                </div>
+</div>
+</header>
+<main class="flex-1 pb-24">
+<!-- Greeting -->
+<div class="px-4 pt-6 pb-2">
+<h1 class="text-2xl font-extrabold tracking-tight">¡Hola, Dr. García!</h1>
+<p class="text-[#618689] dark:text-gray-400 text-sm">Resumen de actividad de hoy, 12 de Octubre</p>
+</div>
+<!-- Stats Grid -->
+<div class="flex flex-wrap gap-3 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 border border-[#dbe5e6] dark:border-white/10 bg-white dark:bg-white/5">
+<div class="flex items-center gap-2 text-[#618689] dark:text-gray-400">
+<span class="material-symbols-outlined text-sm">group</span>
+<p class="text-sm font-medium leading-normal">Total Pacientes</p>
+</div>
+<p class="tracking-light text-2xl font-bold leading-tight">24</p>
+<span class="text-xs text-green-500 font-bold">+2 este mes</span>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 border border-[#dbe5e6] dark:border-white/10 bg-white dark:bg-white/5">
+<div class="flex items-center gap-2 text-[#618689] dark:text-gray-400">
+<span class="material-symbols-outlined text-sm">assignment_late</span>
+<p class="text-sm font-medium leading-normal">Pendientes</p>
+</div>
+<p class="tracking-light text-2xl font-bold leading-tight">5</p>
+<span class="text-xs text-orange-500 font-bold">Urgente</span>
+</div>
+</div>
+<!-- Weekly Activity Section -->
+<section class="mt-4">
+<h2 class="text-[20px] font-bold leading-tight tracking-[-0.015em] px-4 pb-2">Rendimiento Semanal</h2>
+<div class="mx-4 rounded-2xl bg-white dark:bg-white/5 border border-[#dbe5e6] dark:border-white/10 p-4">
+<div class="flex flex-col gap-1">
+<p class="text-sm font-medium text-[#618689] dark:text-gray-400">Fluidez Media Global</p>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-extrabold text-primary">82%</p>
+<p class="text-green-500 text-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">trending_up</span>+5%
+                            </p>
+</div>
+</div>
+<!-- Chart Placeholder -->
+<div class="flex min-h-[160px] flex-col gap-6 py-4">
+<svg fill="none" height="120" preserveaspectratio="none" viewbox="0 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 11 363.077 11C381.231 11 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#chartGradient)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 11 363.077 11C381.231 11 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#2bdeee" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="chartGradient" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#2bdeee" stop-opacity="0.3"></stop>
+<stop offset="1" stop-color="#2bdeee" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-between px-1">
+<p class="text-[#618689] text-[11px] font-bold">L</p>
+<p class="text-[#618689] text-[11px] font-bold">M</p>
+<p class="text-[#618689] text-[11px] font-bold">X</p>
+<p class="text-[#618689] text-[11px] font-bold">J</p>
+<p class="text-[#618689] text-[11px] font-bold">V</p>
+<p class="text-[#618689] text-[11px] font-bold">S</p>
+<p class="text-[#618689] text-[11px] font-bold">D</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Patient Watchlist -->
+<section class="mt-8">
+<div class="flex items-center justify-between px-4 pb-3">
+<h2 class="text-[20px] font-bold leading-tight tracking-[-0.015em]">Seguimiento de Pacientes</h2>
+<button class="text-primary text-sm font-bold">Ver todos</button>
+</div>
+<div class="flex flex-col gap-3 px-4">
+<!-- Patient Card 1 -->
+<div class="flex items-center gap-4 rounded-2xl bg-white dark:bg-white/5 p-4 border border-[#dbe5e6] dark:border-white/10">
+<div class="size-12 rounded-full overflow-hidden bg-gray-100 shrink-0">
+<img class="size-full object-cover" data-alt="Portrait of a young boy smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhYmKF4ADUc-zHx4B95WLbjO369xqhZrKdnELEypsf__xHfMTq3d1dRqzRGxz07Kohy13_yUOa7r97lg6Z2YEtbs4_kO6_YaVzaMVtaOxuxdaunppfsgbnfbm1Gu3ZuTh9sgYa1vKB9IKQTzfSCbsBSXsrOFu2hPl_tshOutjS7svCJQvIoT9EZI_u2_v1WTgsQd6CxoO7nf4BsNEyi3C4VJB5nrOU01KLP-Zx5tlM-a_M9HwHR3uLZNASGKDtF5OXbVOQfnDlbeE"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-base truncate">Lucas Méndez</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider">Mejorando</span>
+<span class="text-xs text-[#618689]">Fluidez: 88%</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="material-symbols-outlined text-primary cursor-pointer">chevron_right</span>
+<p class="text-[10px] text-[#618689] mt-1">Hoy</p>
+</div>
+</div>
+<!-- Patient Card 2 -->
+<div class="flex items-center gap-4 rounded-2xl bg-white dark:bg-white/5 p-4 border border-[#dbe5e6] dark:border-white/10">
+<div class="size-12 rounded-full overflow-hidden bg-gray-100 shrink-0">
+<img class="size-full object-cover" data-alt="Portrait of a teenage girl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE030pGKVmQohkyKx9bBGQXR0nuwy0n7LNGbClITZ0MB4opmUGxhvS3nq_2VCBOIqYPzA8FRsTI38qoAOmv8I65MzL6fMun8i2aON5Y2BxQ4DBJYBE6lV55P3TkWNHvJcOBEotpywCOvCMJnWuiQQ7yVvFY2UyqaHbMt0BZRpBNVAe6gbWlyKotoiNhMBTt6u0BtBC5w_4vDH-SD13JAH3wlLg2rvRGbtPQCaKS81_Ntk4cjugyVw78xt7_2VglCDyrygXN8fKclA"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-base truncate">Sofía Rodríguez</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 text-[10px] font-bold uppercase tracking-wider">Revisar</span>
+<span class="text-xs text-[#618689]">Fluidez: 64%</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="material-symbols-outlined text-primary cursor-pointer">chevron_right</span>
+<p class="text-[10px] text-[#618689] mt-1">Ayer</p>
+</div>
+</div>
+<!-- Patient Card 3 -->
+<div class="flex items-center gap-4 rounded-2xl bg-white dark:bg-white/5 p-4 border border-[#dbe5e6] dark:border-white/10">
+<div class="size-12 rounded-full overflow-hidden bg-gray-100 shrink-0">
+<img class="size-full object-cover" data-alt="Portrait of a young woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-FwVIiGhBem5f926EP1VmgyENbIMfGvvv8MsmmnPJ6VmACVPlkLCPu4qm1iQxO-4p4YO6ice3TPWTR8FvSFxV70RgXeDY5nNKyJZtz6HMWldqIDkBr0l2Eu9Var4vu52NVYYtEFu2ASvhP43liN46M5ZAkUAJUEbyoH6EusLp--DaBgNM4A85Z20x1FEhWdl5FDyGEVJFrTotGl8L5pI2WPKbinBbejo14vXtJ5r2n09VwREg8R6o0xoS3ZXnhbm8sTGm3vlgCTY"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-base truncate">Elena Sanz</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-wider">Estable</span>
+<span class="text-xs text-[#618689]">Fluidez: 75%</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="material-symbols-outlined text-primary cursor-pointer">chevron_right</span>
+<p class="text-[10px] text-[#618689] mt-1">10 Oct</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-lg border-t border-[#dbe5e6] dark:border-white/10 pb-8 pt-3 px-6">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined font-bold">home</span>
+<span class="text-[10px] font-bold">Inicio</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#618689] dark:text-gray-400">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold">Pacientes</span>
+</div>
+<!-- Floating Action Button in Nav? No, keep it separate for iOS. But we can center one. -->
+<div class="flex flex-col items-center -mt-8">
+<div class="size-14 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/40 mb-1">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-primary">Nuevo</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#618689] dark:text-gray-400">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[10px] font-bold">Informes</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#618689] dark:text-gray-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Ajustes</span>
+</div>
+</div>
+</nav>
+</div>
+</body></html>
