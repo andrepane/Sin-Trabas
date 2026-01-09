@@ -7,7 +7,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -32,28 +31,25 @@
         }
         body {
             font-family: 'Manrope', sans-serif;
+            min-height: max(884px, 100dvh);
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#111418] dark:text-white">
 <div class="relative flex h-auto min-h-screen w-full max-w-[430px] mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
 <!-- TopAppBar -->
 <div class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-100 dark:border-gray-800">
-<div class="text-primary flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<a aria-label="Volver al inicio" class="text-primary flex size-12 shrink-0 items-center justify-start cursor-pointer" href="index.html">
 <span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
-</div>
+</a>
 <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Técnica de Seguimiento</h2>
 <div class="flex w-12 items-center justify-end">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-primary gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<button aria-label="Información de la técnica" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-primary gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0" type="button">
 <span class="material-symbols-outlined text-2xl">info</span>
 </button>
 </div>
 </div>
+<main class="flex flex-1 flex-col">
 <!-- HeadlineText -->
 <div class="px-4">
 <h3 class="text-[#111418] dark:text-white tracking-light text-2xl font-bold leading-tight pt-6">Reto Diario</h3>
@@ -64,7 +60,7 @@
 <div class="flex flex-col items-stretch justify-start rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
 <div class="w-full bg-primary/10 flex items-center justify-center aspect-[16/9] rounded-t-xl relative overflow-hidden">
 <!-- Abstract Background Pattern -->
-<div class="absolute inset-0 opacity-20" data-alt="Abstract blue wave patterns representing sound waves">
+<div class="absolute inset-0 opacity-20" aria-hidden="true">
 <div class="absolute inset-0 bg-gradient-to-br from-primary via-transparent to-primary/30"></div>
 </div>
 <span class="material-symbols-outlined text-primary text-6xl relative z-10">graphic_eq</span>
@@ -72,14 +68,14 @@
 <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-2 p-5">
 <div class="flex justify-between items-start">
 <p class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Fragmento de hoy</p>
-<span class="material-symbols-outlined text-primary text-xl">refresh</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-xl">refresh</span>
 </div>
 <p class="text-[#617589] dark:text-gray-300 text-base font-medium leading-relaxed italic border-l-4 border-primary/30 pl-3 my-2">
                         "El susurro del viento entre los pinos altos crea una melodía tranquila que relaja el alma."
                     </p>
 <div class="flex items-center gap-3 justify-between mt-2">
 <p class="text-[#617589] dark:text-gray-400 text-xs font-normal">Nivel: Principiante • 8 seg</p>
-<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-primary text-white text-sm font-bold leading-normal shadow-md shadow-primary/20">
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-primary text-white text-sm font-bold leading-normal shadow-md shadow-primary/20" type="button">
 <span class="truncate">Nuevo Reto</span>
 </button>
 </div>
@@ -139,20 +135,31 @@
 <div class="w-1.5 h-10 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
 </div>
 <div class="flex items-center justify-center gap-8 w-full">
-<button class="flex items-center justify-center size-14 rounded-full bg-background-light dark:bg-gray-800 text-[#111418] dark:text-white border border-gray-200 dark:border-gray-700">
+<button aria-label="Reproducir ejemplo" class="flex items-center justify-center size-14 rounded-full bg-background-light dark:bg-gray-800 text-[#111418] dark:text-white border border-gray-200 dark:border-gray-700" type="button">
 <span class="material-symbols-outlined text-2xl">play_arrow</span>
 </button>
-<button class="flex items-center justify-center size-20 rounded-full bg-primary text-white shadow-lg shadow-primary/30 ring-4 ring-primary/10">
+<button aria-label="Iniciar grabación" class="flex items-center justify-center size-20 rounded-full bg-primary text-white shadow-lg shadow-primary/30 ring-4 ring-primary/10" type="button">
 <span class="material-symbols-outlined text-4xl">mic</span>
 </button>
-<button class="flex items-center justify-center size-14 rounded-full bg-background-light dark:bg-gray-800 text-[#111418] dark:text-white border border-gray-200 dark:border-gray-700">
+<button aria-label="Ver historial" class="flex items-center justify-center size-14 rounded-full bg-background-light dark:bg-gray-800 text-[#111418] dark:text-white border border-gray-200 dark:border-gray-700" type="button">
 <span class="material-symbols-outlined text-2xl">history</span>
 </button>
 </div>
 <p class="text-primary font-bold text-sm tracking-widest uppercase">Pulsa para empezar</p>
 </div>
 </div>
+<nav class="mt-6 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-wide">
+<a class="text-gray-500 hover:text-primary transition-colors" href="index.html">Inicio</a>
+<a aria-current="page" class="text-primary" href="index1.html">Shadowing</a>
+<a class="text-gray-500 hover:text-primary transition-colors" href="index2.html">Inicio suave</a>
+<a class="text-gray-500 hover:text-primary transition-colors" href="index3.html">Prolongación</a>
+<a class="text-gray-500 hover:text-primary transition-colors" href="index4.html">Panel</a>
+<a class="text-gray-500 hover:text-primary transition-colors" href="index5.html">Paciente</a>
+</div>
+</nav>
 <!-- Space for iOS Home Indicator -->
 <div class="h-6 bg-white dark:bg-gray-900"></div>
+</main>
 </div>
 </body></html>
