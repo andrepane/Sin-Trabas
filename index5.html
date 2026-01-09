@@ -37,12 +37,12 @@
 <div class="max-w-[480px] mx-auto bg-white dark:bg-[#1a242f] min-h-screen shadow-sm">
 <!-- TopAppBar -->
 <div class="flex items-center bg-white dark:bg-[#1a242f] p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-100 dark:border-gray-800">
-<div class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center cursor-pointer">
+<a aria-label="Volver al inicio" class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center cursor-pointer" href="index.html">
 <span class="material-symbols-outlined">arrow_back_ios</span>
-</div>
+</a>
 <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Expediente Clínico</h2>
 <div class="flex w-12 items-center justify-end">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-primary gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<button aria-label="Abrir chat" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-primary gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0" type="button">
 <span class="material-symbols-outlined">chat_bubble</span>
 </button>
 </div>
@@ -127,7 +127,7 @@
 <div class="px-4 mt-6">
 <div class="flex justify-between items-end pb-4">
 <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Sesiones Recientes</h3>
-<p class="text-primary text-sm font-bold cursor-pointer">Ver todo</p>
+<a class="text-primary text-sm font-bold" href="index4.html">Ver todo</a>
 </div>
 <div class="flex flex-col gap-3">
 <!-- Recording Item 1 -->
@@ -168,16 +168,27 @@
 <span class="material-symbols-outlined text-xl">edit_note</span>
 <p class="text-sm font-bold uppercase tracking-tight">Nota del Terapeuta</p>
 </div>
-<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm text-[#111418] dark:text-gray-200 placeholder-gray-400 resize-none min-h-[80px]" placeholder="Escribe aquí las tareas para la próxima semana...">Buen progreso esta semana. Para el lunes: Practicar Easy Onset durante 10 minutos al levantarse. Enfocarse en la respiración diafragmática.</textarea>
+<label class="sr-only" for="homework-notes">Nota del terapeuta</label>
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm text-[#111418] dark:text-gray-200 placeholder-gray-400 resize-none min-h-[80px]" id="homework-notes" placeholder="Escribe aquí las tareas para la próxima semana...">Buen progreso esta semana. Para el lunes: Practicar Easy Onset durante 10 minutos al levantarse. Enfocarse en la respiración diafragmática.</textarea>
 <div class="flex justify-end mt-2">
-<button class="bg-primary text-white text-xs font-bold py-2 px-4 rounded-lg shadow-sm">Guardar Nota</button>
+<button class="bg-primary text-white text-xs font-bold py-2 px-4 rounded-lg shadow-sm" type="button">Guardar Nota</button>
 </div>
 </div>
 </div>
+<nav class="mb-8 px-4">
+<div class="flex flex-wrap gap-3 text-xs font-bold uppercase tracking-wide text-gray-500">
+<a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+<a class="hover:text-primary transition-colors" href="index1.html">Shadowing</a>
+<a class="hover:text-primary transition-colors" href="index2.html">Inicio suave</a>
+<a class="hover:text-primary transition-colors" href="index3.html">Prolongación</a>
+<a class="hover:text-primary transition-colors" href="index4.html">Panel</a>
+<a aria-current="page" class="text-primary" href="index5.html">Paciente</a>
+</div>
+</nav>
 <!-- Sticky Bottom CTA (Mobile Style) -->
 <div class="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto p-4 bg-white/80 dark:bg-[#1a242f]/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 flex gap-3">
-<button class="flex-1 bg-white border border-primary text-primary font-bold py-3 rounded-xl text-sm">Agendar Cita</button>
-<button class="flex-1 bg-primary text-white font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-2">
+<button class="flex-1 bg-white border border-primary text-primary font-bold py-3 rounded-xl text-sm" type="button">Agendar Cita</button>
+<button class="flex-1 bg-primary text-white font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-2" type="button">
 <span class="material-symbols-outlined text-lg">add_task</span>
                 Nueva Tarea
             </button>

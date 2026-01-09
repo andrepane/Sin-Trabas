@@ -31,15 +31,15 @@
 <!-- Top Navigation Bar -->
 <header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
 <div class="flex items-center p-4 justify-between max-w-md mx-auto">
-<div class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center justify-start">
+<a aria-label="Volver al inicio" class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center justify-start" href="index.html">
 <span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
-</div>
+</a>
 <div class="flex flex-col items-center">
 <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-tight">Técnica de Habla</h2>
 <span class="text-xs text-primary font-medium">Sesión 1: Prolongación</span>
 </div>
 <div class="flex w-12 items-center justify-end">
-<button class="flex items-center justify-center rounded-xl h-12 bg-transparent text-primary">
+<button aria-label="Ayuda" class="flex items-center justify-center rounded-xl h-12 bg-transparent text-primary" type="button">
 <span class="material-symbols-outlined">help</span>
 </button>
 </div>
@@ -109,7 +109,7 @@
 </div>
 <!-- Guidance Button -->
 <div class="mt-12 w-full">
-<button class="w-full flex items-center justify-center gap-2 rounded-xl h-14 bg-primary/10 hover:bg-primary/20 text-primary font-bold transition-colors">
+<button aria-label="Escuchar guía" class="w-full flex items-center justify-center gap-2 rounded-xl h-14 bg-primary/10 hover:bg-primary/20 text-primary font-bold transition-colors" type="button">
 <span class="material-symbols-outlined">volume_up</span>
 <span>Escuchar Guía</span>
 </button>
@@ -119,15 +119,15 @@
 <!-- Action Controls -->
 <div class="px-6 py-8 flex flex-col gap-4">
 <div class="flex gap-4">
-<button class="flex-1 flex flex-col items-center justify-center gap-1 rounded-xl h-24 bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 active:scale-95 transition-transform">
+<button aria-label="Cambiar palabra" class="flex-1 flex flex-col items-center justify-center gap-1 rounded-xl h-24 bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 active:scale-95 transition-transform" type="button">
 <span class="material-symbols-outlined text-gray-400">refresh</span>
 <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Cambiar</span>
 </button>
-<button class="flex-[2] flex items-center justify-center gap-3 rounded-xl h-24 bg-primary text-white shadow-lg shadow-primary/25 active:scale-95 transition-transform">
+<button aria-label="Iniciar sesión" class="flex-[2] flex items-center justify-center gap-3 rounded-xl h-24 bg-primary text-white shadow-lg shadow-primary/25 active:scale-95 transition-transform" type="button">
 <span class="material-symbols-outlined text-3xl">play_circle</span>
 <span class="text-lg font-bold">Iniciar</span>
 </button>
-<button class="flex-1 flex flex-col items-center justify-center gap-1 rounded-xl h-24 bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 active:scale-95 transition-transform">
+<button aria-label="Marcar como logrado" class="flex-1 flex flex-col items-center justify-center gap-1 rounded-xl h-24 bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 active:scale-95 transition-transform" type="button">
 <span class="material-symbols-outlined text-gray-400">check_circle</span>
 <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Logrado</span>
 </button>
@@ -136,26 +136,36 @@
                 Consejo: Mantén los hombros relajados y exhala suavemente.
             </p>
 </div>
+<nav class="px-6 pb-6">
+<div class="flex flex-wrap gap-3 text-xs font-bold uppercase tracking-wide text-gray-500 justify-center">
+<a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+<a class="hover:text-primary transition-colors" href="index1.html">Shadowing</a>
+<a class="hover:text-primary transition-colors" href="index2.html">Inicio suave</a>
+<a aria-current="page" class="text-primary" href="index3.html">Prolongación</a>
+<a class="hover:text-primary transition-colors" href="index4.html">Panel</a>
+<a class="hover:text-primary transition-colors" href="index5.html">Paciente</a>
+</div>
+</nav>
 </main>
 <!-- Bottom Navigation Bar (iOS Style) -->
 <nav class="pb-8 pt-2 px-6 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800">
 <div class="flex justify-around items-center max-w-md mx-auto">
-<div class="flex flex-col items-center gap-1 text-primary">
+<a aria-current="page" class="flex flex-col items-center gap-1 text-primary" href="index3.html">
 <span class="material-symbols-outlined">exercise</span>
 <span class="text-[10px] font-bold">Práctica</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-gray-400">
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors" href="index4.html">
 <span class="material-symbols-outlined">analytics</span>
 <span class="text-[10px] font-medium">Progreso</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-gray-400">
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors" href="index1.html">
 <span class="material-symbols-outlined">school</span>
 <span class="text-[10px] font-medium">Cursos</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-gray-400">
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors" href="index5.html">
 <span class="material-symbols-outlined">person</span>
 <span class="text-[10px] font-medium">Perfil</span>
-</div>
+</a>
 </div>
 </nav>
 </body></html>
