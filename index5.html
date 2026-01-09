@@ -7,7 +7,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -34,27 +33,23 @@
 <style>
         body {
             font-family: 'Manrope', sans-serif;
+            min-height: max(884px, 100dvh);
         }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
   </head>
 <body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white min-h-screen">
 <div class="max-w-[480px] mx-auto bg-white dark:bg-[#1a242f] min-h-screen shadow-sm">
 <!-- TopAppBar -->
 <div class="flex items-center bg-white dark:bg-[#1a242f] p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-100 dark:border-gray-800">
-<div class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center cursor-pointer">
+<a aria-label="Volver al inicio" class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center cursor-pointer" href="index.html">
 <span class="material-symbols-outlined">arrow_back_ios</span>
-</div>
+</a>
 <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Expediente Clínico</h2>
 <div class="flex w-12 items-center justify-end">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-primary gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<button aria-label="Abrir chat" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-primary gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0" type="button">
 <span class="material-symbols-outlined">chat_bubble</span>
 </button>
 </div>
@@ -63,7 +58,9 @@
 <div class="flex p-4 @container">
 <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
 <div class="flex gap-4 items-center">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-20 w-20 border-2 border-primary/20" data-alt="Portrait of a male patient smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRhF6W_Od2b0YzxLsZ4G52qOmymOQAc3_x6i3R1bELOyeVoNhM2mOilzUEWA4xQX4S_silwLOVtvmKgFXklZ4eQhCIpDy9RCWRwywCsKodtprt20LWlebP3BvSuZix8PzU7jkvu3LuKhPplK2AbrQUAq8W15L1QcD_DF0lDMffYS6nFu3Ggj22SdZRZymR7Y4f1UM6R0akhulho3H_SyijlMtt9dAIY94i2lJxr7MUoGOscYkzc14QTXsFR56uC5Uk_PE1TETdof8");'></div>
+<div class="aspect-square h-20 w-20 overflow-hidden rounded-full border-2 border-primary/20">
+<img alt="Juan Pérez sonriendo" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRhF6W_Od2b0YzxLsZ4G52qOmymOQAc3_x6i3R1bELOyeVoNhM2mOilzUEWA4xQX4S_silwLOVtvmKgFXklZ4eQhCIpDy9RCWRwywCsKodtprt20LWlebP3BvSuZix8PzU7jkvu3LuKhPplK2AbrQUAq8W15L1QcD_DF0lDMffYS6nFu3Ggj22SdZRZymR7Y4f1UM6R0akhulho3H_SyijlMtt9dAIY94i2lJxr7MUoGOscYkzc14QTXsFR56uC5Uk_PE1TETdof8"/>
+</div>
 <div class="flex flex-col justify-center">
 <p class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Juan Pérez</p>
 <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Disfemia Tónica-Clónica</p>
@@ -139,7 +136,7 @@
 <div class="px-4 mt-6">
 <div class="flex justify-between items-end pb-4">
 <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Sesiones Recientes</h3>
-<p class="text-primary text-sm font-bold cursor-pointer">Ver todo</p>
+<a class="text-primary text-sm font-bold" href="index4.html">Ver todo</a>
 </div>
 <div class="flex flex-col gap-3">
 <!-- Recording Item 1 -->
@@ -180,16 +177,27 @@
 <span class="material-symbols-outlined text-xl">edit_note</span>
 <p class="text-sm font-bold uppercase tracking-tight">Nota del Terapeuta</p>
 </div>
-<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm text-[#111418] dark:text-gray-200 placeholder-gray-400 resize-none min-h-[80px]" placeholder="Escribe aquí las tareas para la próxima semana...">Buen progreso esta semana. Para el lunes: Practicar Easy Onset durante 10 minutos al levantarse. Enfocarse en la respiración diafragmática.</textarea>
+<label class="sr-only" for="homework-notes">Nota del terapeuta</label>
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm text-[#111418] dark:text-gray-200 placeholder-gray-400 resize-none min-h-[80px]" id="homework-notes" placeholder="Escribe aquí las tareas para la próxima semana...">Buen progreso esta semana. Para el lunes: Practicar Easy Onset durante 10 minutos al levantarse. Enfocarse en la respiración diafragmática.</textarea>
 <div class="flex justify-end mt-2">
-<button class="bg-primary text-white text-xs font-bold py-2 px-4 rounded-lg shadow-sm">Guardar Nota</button>
+<button class="bg-primary text-white text-xs font-bold py-2 px-4 rounded-lg shadow-sm" type="button">Guardar Nota</button>
 </div>
 </div>
 </div>
+<nav class="mb-8 px-4">
+<div class="flex flex-wrap gap-3 text-xs font-bold uppercase tracking-wide text-gray-500">
+<a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+<a class="hover:text-primary transition-colors" href="index1.html">Shadowing</a>
+<a class="hover:text-primary transition-colors" href="index2.html">Inicio suave</a>
+<a class="hover:text-primary transition-colors" href="index3.html">Prolongación</a>
+<a class="hover:text-primary transition-colors" href="index4.html">Panel</a>
+<a aria-current="page" class="text-primary" href="index5.html">Paciente</a>
+</div>
+</nav>
 <!-- Sticky Bottom CTA (Mobile Style) -->
 <div class="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto p-4 bg-white/80 dark:bg-[#1a242f]/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 flex gap-3">
-<button class="flex-1 bg-white border border-primary text-primary font-bold py-3 rounded-xl text-sm">Agendar Cita</button>
-<button class="flex-1 bg-primary text-white font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-2">
+<button class="flex-1 bg-white border border-primary text-primary font-bold py-3 rounded-xl text-sm" type="button">Agendar Cita</button>
+<button class="flex-1 bg-primary text-white font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-2" type="button">
 <span class="material-symbols-outlined text-lg">add_task</span>
                 Nueva Tarea
             </button>
