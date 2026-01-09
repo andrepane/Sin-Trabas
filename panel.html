@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel demo · Sin trabas</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body data-page="panel">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">
+          <span class="logo-badge">ST</span>
+          <span>Sin trabas</span>
+        </a>
+        <nav class="nav">
+          <a data-nav="home" href="index.html">Inicio</a>
+          <a data-nav="tecnicas" href="tecnicas.html">Técnicas</a>
+          <a data-nav="panel" href="panel.html">Panel demo</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" class="section">
+      <div class="container stack">
+        <div class="page-header">
+          <h1 class="title">Panel demo</h1>
+          <p class="subtitle">
+            Simula tu avance sin iniciar sesión. Los datos se reinician al recargar.
+          </p>
+          <span class="state-pill">Modo demostración</span>
+        </div>
+        <div id="panel-content" class="demo-grid"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>Continúa practicando desde el listado de técnicas.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
