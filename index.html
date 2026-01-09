@@ -1,830 +1,171 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIN TRABAS - Ayuda para la disfemia</title>
-    <script>tailwind.config = { darkMode: 'class' };</script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-blue-50 font-sans dark:bg-gray-900 dark:text-gray-100">
-    <!-- Header/Navigation -->
-    <header class="bg-blue-600 text-white shadow-md sticky top-0 z-50 dark:bg-gray-800">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center mb-4 md:mb-0">
-                <div class="text-4xl mr-3">🗣️</div>
-                <h1 class="text-2xl md:text-3xl font-bold">SIN TRABAS</h1>
-            </div>
-            <nav>
-                <ul class="flex flex-wrap justify-center gap-2 md:gap-6">
-                    <li><button onclick="showSection('home')" class="nav-link px-3 py-2 rounded-lg hover:bg-blue-700 transition">Inicio</button></li>
-                    <li><button onclick="showSection('about')" class="nav-link px-3 py-2 rounded-lg hover:bg-blue-700 transition">¿Qué es?</button></li>
-                    <li><button onclick="showSection('techniques')" class="nav-link px-3 py-2 rounded-lg hover:bg-blue-700 transition">Técnicas</button></li>
-                    <li><button onclick="showSection('exercises')" class="nav-link px-3 py-2 rounded-lg hover:bg-blue-700 transition">Ejercicios</button></li>
-                    <li><button onclick="showSection('about-us')" class="nav-link px-3 py-2 rounded-lg hover:bg-blue-700 transition">Nosotros</button></li>
-                    <li><button onclick="showSection('contact')" class="nav-link px-3 py-2 rounded-lg hover:bg-blue-700 transition">Contacto</button></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle" onclick="toggleDarkMode()" class="mt-4 md:mt-0 bg-blue-500 hover:bg-blue-700 text-white px-3 py-2 rounded-lg transition dark:bg-gray-600">
-                🌙
-            </button>
-        </div>
-    </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <!-- Home Section -->
-        <section id="home" class="section active">
-            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-blue-600 mb-4">Bienvenido a SIN TRABAS</h2>
-                    <p class="text-xl text-gray-700">Tu espacio para comprender y mejorar la disfemia (tartamudez)</p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <p class="text-lg mb-4 text-gray-700">La disfemia es un trastorno de la fluidez del habla que afecta a muchas personas en todo el mundo. En este sitio encontrarás información, técnicas y ejercicios diseñados para ayudarte o ayudar a tus seres queridos.</p>
-                        <p class="text-lg mb-6 text-gray-700">Nuestro objetivo es proporcionar herramientas accesibles y comprensibles para trabajar la fluidez del habla desde casa o como complemento a terapias profesionales.</p>
-                        <button onclick="showSection('techniques')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition transform hover:scale-105">
-                            Explorar técnicas
-                        </button>
-                    </div>
-                    <div class="flex justify-center">
-                        <div class="bg-blue-100 p-8 rounded-full w-64 h-64 flex items-center justify-center">
-                            <div class="text-8xl">💬</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-                    <div class="text-5xl mb-4">❓</div>
-                    <h3 class="text-xl font-semibold mb-2 text-blue-600">¿Qué es la disfemia?</h3>
-                    <p class="text-gray-600">Aprende sobre las causas, síntomas y manifestaciones de este trastorno del habla.</p>
-                    <button onclick="showSection('about')" class="mt-4 text-blue-500 hover:underline">Leer más</button>
-                </div>
-                <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-                    <div class="text-5xl mb-4">🔧</div>
-                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Técnicas</h3>
-                    <p class="text-gray-600">Descubre métodos efectivos para mejorar la fluidez de tu habla.</p>
-                    <button onclick="showSection('techniques')" class="mt-4 text-blue-500 hover:underline">Explorar</button>
-                </div>
-                <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-                    <div class="text-5xl mb-4">💪</div>
-                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Práctica</h3>
-                    <p class="text-gray-600">Ejercicios interactivos para poner en práctica lo aprendido.</p>
-                    <button onclick="showSection('exercises')" class="mt-4 text-blue-500 hover:underline">Comenzar</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- What is Dysfluency Section -->
-        <section id="about" class="section">
-            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                <h2 class="text-3xl font-bold text-blue-600 mb-6">¿Qué es la disfemia (tartamudez)?</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-blue-500">Definición</h3>
-                        <p class="mb-4 text-gray-700">La disfemia, comúnmente conocida como tartamudez, es un trastorno de la fluidez del habla caracterizado por interrupciones involuntarias en el flujo normal del habla, junto con tensión muscular y sensación de pérdida de control.</p>
-                        <p class="mb-4 text-gray-700">No es simplemente un problema de "nervios" o falta de confianza, sino un trastorno neurológico que afecta la coordinación de los movimientos necesarios para el habla.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-blue-500">Síntomas comunes</h3>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                            <li>Repeticiones de sonidos, sílabas o palabras</li>
-                            <li>Prolongaciones de sonidos</li>
-                            <li>Bloqueos donde el sonido no sale</li>
-                            <li>Tensión física visible durante el habla</li>
-                            <li>Miedo a determinadas palabras o situaciones</li>
-                            <li>Movimientos asociados (parpadeo, movimientos de cabeza)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <h3 class="text-xl font-semibold mb-3 text-blue-500">Causas neurológicas</h3>
-                <div class="bg-blue-50 rounded-lg p-4 mb-6">
-                    <p class="text-gray-700">Investigaciones recientes muestran diferencias en el funcionamiento cerebral entre personas con y sin disfemia. Las áreas relacionadas con la producción del habla (como el área de Broca) parecen funcionar de manera diferente, y hay evidencia de una ligera descoordinación en el timing entre las regiones cerebrales responsables del lenguaje.</p>
-                </div>
-                
-                <h3 class="text-xl font-semibold mb-3 text-blue-500">Datos importantes</h3>
-                <div class="grid md:grid-cols-3 gap-4 mb-6">
-                    <div class="border border-blue-200 rounded-lg p-4 bg-white">
-                        <h4 class="font-semibold mb-1">Prevalencia</h4>
-                        <p class="text-sm text-gray-600">Afecta aproximadamente al 1% de la población adulta y al 5% de los niños.</p>
-                    </div>
-                    <div class="border border-blue-200 rounded-lg p-4 bg-white">
-                        <h4 class="font-semibold mb-1">Edad de inicio</h4>
-                        <p class="text-sm text-gray-600">Generalmente entre los 2 y 5 años, durante el desarrollo del lenguaje.</p>
-                    </div>
-                    <div class="border border-blue-200 rounded-lg p-4 bg-white">
-                        <h4 class="font-semibold mb-1">Recuperación</h4>
-                        <p class="text-sm text-gray-600">Alrededor del 75% de los niños superan la tartamudez con o sin terapia.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                    <div class="flex">
-                        <div class="flex-shrink-0">💡</div>
-                        <div class="ml-3">
-                            <p class="text-sm text-yellow-700"><strong>Importante:</strong> La disfemia no está relacionada con la inteligencia. Las personas con disfemia tienen exactamente las mismas capacidades cognitivas que las demás.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Techniques Section -->
-        <section id="techniques" class="section">
-            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                <h2 class="text-3xl font-bold text-blue-600 mb-6">Técnicas para mejorar la fluidez</h2>
-                <p class="text-gray-700 mb-8">Estas técnicas han demostrado ser efectivas para muchas personas con disfemia. Te recomendamos probarlas bajo la supervisión de un especialista en lenguaje.</p>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Technique Cards -->
-                    <div class="technique-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showTechnique('soft-start')">
-                        <div class="p-5">
-                            <div class="text-4xl mb-3">🕊️</div>
-                            <h3 class="text-xl font-semibold mb-2 text-blue-600">Inicio suave</h3>
-                            <p class="text-gray-600">Aprende a comenzar las frases con una fluidez controlada.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="technique-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showTechnique('smoothing')">
-                        <div class="p-5">
-                            <div class="text-4xl mb-3">🌊</div>
-                            <h3 class="text-xl font-semibold mb-2 text-blue-600">Suavización</h3>
-                            <p class="text-gray-600">Técnica para alisar las transiciones entre palabras.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="technique-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showTechnique('slow-down')">
-                        <div class="p-5">
-                            <div class="text-4xl mb-3">🐢</div>
-                            <h3 class="text-xl font-semibold mb-2 text-blue-600">Enlentecimiento</h3>
-                            <p class="text-gray-600">Reducir la velocidad para ganar control sobre el habla.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="technique-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showTechnique('stop')">
-                        <div class="p-5">
-                            <div class="text-4xl mb-3">✋</div>
-                            <h3 class="text-xl font-semibold mb-2 text-blue-600">Técnica STOP</h3>
-                            <p class="text-gray-600">Método para pausar y reanudar el habla con control.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="technique-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showTechnique('breathing')">
-                        <div class="p-5">
-                            <div class="text-4xl mb-3">🌬️</div>
-                            <h3 class="text-xl font-semibold mb-2 text-blue-600">Coordinación fono-respiratoria</h3>
-                            <p class="text-gray-600">Sincroniza tu respiración con el habla.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="technique-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showTechnique('intonation')">
-                        <div class="p-5">
-                            <div class="text-4xl mb-3">🎵</div>
-                            <h3 class="text-xl font-semibold mb-2 text-blue-600">Entonación</h3>
-                            <p class="text-gray-600">Usa variaciones melódicas para facilitar la fluidez.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="technique-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showTechnique('continuous')">
-                        <div class="p-5">
-                            <div class="text-4xl mb-3">➿</div>
-                            <h3 class="text-xl font-semibold mb-2 text-blue-600">Fonación continuada</h3>
-                            <p class="text-gray-600">Mantén el flujo de voz entre palabras.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="technique-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showTechnique('generalization')">
-                        <div class="p-5">
-                            <div class="text-4xl mb-3">🌐</div>
-                            <h3 class="text-xl font-semibold mb-2 text-blue-600">Generalización</h3>
-                            <p class="text-gray-600">Aplicar las técnicas en diferentes contextos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Techniques Details (hidden by default) -->
-            <div id="technique-details" class="hidden">
-                <!-- Soft Start Technique -->
-                <div id="soft-start-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-                        </svg>
-                        Volver a técnicas
-                    </button>
-                    
-                    <h2 class="text-2xl font-bold text-blue-600 mb-4">Inicio Suave</h2>
-                    <div class="flex flex-col md:flex-row gap-8">
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
-                              <p class="mb-4 text-gray-700">Consiste en iniciar palabras que comienzan en vocal de forma suave, evitando el golpe inicial. Las cuerdas vocales se unen sin tensión mientras dejas salir algo de aire.</p>
-                            
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿Cómo practicarlo?</h3>
-                            <ol class="list-decimal pl-5 space-y-2 text-gray-700">
-                                <li>Antes de hablar, toma un ligero y suave suspiro</li>
-                                <li>Comienza la primera palabra con un sonido suave como si fuera un susurro</li>
-                                <li>Mantén un flujo de aire constante mientras hablas</li>
-                                <li>Evita cualquier tensión en los labios, lengua o mandíbula</li>
-                                <li>Progresa gradualmente a un volumen normal de voz</li>
-                            </ol>
-                            
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
-                            <div class="bg-blue-50 rounded-lg p-4">
-                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                      <li>Lee combinaciones de vocales suavizando la primera (UE, AIU, AUIE...)</li>
-                                      <li>Practica con palabras que empiezan con "A": Aclamar, Agosto, Atado, Agua...</li>
-                                      <li>Realiza el ejercicio con otras vocales: Enfermo, Isla, Oso, Unicornio...</li>
-                                </ul>
-                            </div>
-    <div class="mt-4">
-        <p id="soft-start-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
-        <div class="flex gap-2">
-            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('soft-start')">Frase</button>
-            <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('soft-start')">Grabar</button>
-            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('soft-start')">Detener</button>
-        </div>
-        <p id="soft-start-result" class="text-sm text-blue-700 mt-1"></p>
-    </div>
-                        </div>
-                        <div class="md:w-1/3">
-                            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
-                                <div class="text-8xl mb-4">🕊️</div>
-                                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Imagina que tus palabras flotan suavemente hacia fuera en lugar de ser empujadas con fuerza.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Other techniques would have similar detail sections -->
-                <!-- Smooting Technique -->
-                <div id="smoothing-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-                        </svg>
-                        Volver a técnicas
-                    </button>
-                    
-                    <h2 class="text-2xl font-bold text-blue-600 mb-4">Suavización del Habla</h2>
-                    <div class="flex flex-col md:flex-row gap-8">
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
-                              <p class="mb-4 text-gray-700">Consiste en reducir la tensión al pronunciar las consonantes iniciales, especialmente las explosivas como P, T y K, amortiguando el golpe como un muelle.</p>
-                            
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿Cómo practicarlo?</h3>
-                            <ol class="list-decimal pl-5 space-y-2 text-gray-700">
-                                <li>Identifica los momentos de tensión en tu habla</li>
-                                <li>Relaja conscientemente la mandíbula, lengua y labios</li>
-                                <li>Desliza suavemente de un sonido al siguiente</li>
-                                <li>Mantén un flujo continuo de aire mientras hablas</li>
-                                <li>Practica con frases cortas antes de aplicar a conversaciones</li>
-                            </ol>
-                            
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
-                            <div class="bg-blue-50 rounded-lg p-4">
-                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                      <li>Palabras con P: parque, pendiente, persona, pandereta...</li>
-                                      <li>Palabras con T: tela, tienda, toalla, temático...</li>
-                                      <li>Palabras con K: caballo, queso, kilo, quemar...</li>
-                                </ul>
-                            </div>
-    <div class="mt-4">
-        <p id="smoothing-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
-        <div class="flex gap-2">
-            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('smoothing')">Frase</button>
-            <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('smoothing')">Grabar</button>
-            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('smoothing')">Detener</button>
-        </div>
-        <p id="smoothing-result" class="text-sm text-blue-700 mt-1"></p>
-    </div>
-                        </div>
-                        <div class="md:w-1/3">
-                            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
-                                <div class="text-8xl mb-4">🌊</div>
-                                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Imagina que tus palabras son olas que fluyen suavemente una tras otra sin interrupciones abruptas.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slow Down Technique -->
-                <div id="slow-down-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-                        </svg>
-                        Volver a técnicas
-                    </button>
-                    
-                    <h2 class="text-2xl font-bold text-blue-600 mb-4">Enlentecimiento del Habla</h2>
-                    <div class="flex flex-col md:flex-row gap-8">
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
-                              <p class="mb-4 text-gray-700">Hablar a un ritmo pausado para ganar control sobre las palabras y poder aplicar el resto de las técnicas con calma.</p>
-                            
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿Cómo practicarlo?</h3>
-                            <ol class="list-decimal pl-5 space-y-2 text-gray-700">
-                                <li>Pronuncia cada palabra con claridad y pausa entre ellas</li>
-                                <li>Usa un metrónomo o palmea para mantener un ritmo constante</li>
-                                <li>Extiende ligeramente las vocales al hablar</li>
-                                <li>Incorpora pequeñas pausas entre frases</li>
-                                <li>Ajusta gradualmente la velocidad hacia un ritmo más natural</li>
-                            </ol>
-                            
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
-                            <div class="bg-blue-50 rounded-lg p-4">
-                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                      <li>Cronometrar la lectura del texto de Blancanieves a ritmo de tortuga</li>
-                                      <li>Leer otros cuentos siguiendo ese mismo paso lento</li>
-                                      <li>Pausar a menudo en párrafos largos para mantener el control</li>
-                                </ul>
-                            </div>
-                        </div>
-    <div class="mt-4">
-        <p id="slow-down-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
-        <div class="flex gap-2">
-            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('slow-down')">Frase</button>
-            <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('slow-down')">Grabar</button>
-            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('slow-down')">Detener</button>
-        </div>
-        <p id="slow-down-result" class="text-sm text-blue-700 mt-1"></p>
-    </div>
-                        <div class="md:w-1/3">
-                            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
-                                <div class="text-8xl mb-4">🐢</div>
-                                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Imagina que hablas como una tortuga sabia, dándote todo el tiempo que necesitas para expresarte con claridad.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- STOP Technique -->
-                <div id="stop-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-                        </svg>
-                        Volver a técnicas
-                    </button>
-                    
-                    <h2 class="text-2xl font-bold text-blue-600 mb-4">Técnica STOP</h2>
-                    <div class="flex flex-col md:flex-row gap-8">
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
-                              <p class="mb-4 text-gray-700">Detener el habla ante un bloqueo o repetición para no acumular tensión. Tras la pausa, suelta un poco de aire y retoma con suavidad.</p>
-                            
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">Pasos de la técnica</h3>
-                            <div class="grid gap-2 mb-4">
-                                <div class="font-bold text-blue-500">S - Suspende el habla</div>
-                                <div class="ml-4 text-gray-700">Al sentir un bloqueo, detén inmediatamente cualquier intento de hablar</div>
-                                
-                                <div class="font-bold text-blue-500">T - Toma aire</div>
-                                <div class="ml-4 text-gray-700">Haz una respiración relajada y profunda</div>
-                                
-                                <div class="font-bold text-blue-500">O - Organiza tus pensamientos</div>
-                                <div class="ml-4 text-gray-700">Deja de luchar contra el bloqueo y prepárate para reiniciar</div>
-                                
-                                <div class="font-bold text-blue-500">P - Prosigue suavemente</div>
-                                <div class="ml-4 text-gray-700">Comienza de nuevo con inicio suave y ritmo más lento</div>
-                            </div>
-                            
-                            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
-                            <div class="bg-blue-50 rounded-lg p-4">
-                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                                      <li>Lee frases y deténte en la palabra señalada para soltar aire</li>
-                                      <li>Usa una palabra mágica que te recuerde hacer la pausa</li>
-                                      <li>Practica conversaciones cortas, aplicando STOP ante cada bloqueo</li>
-                                </ul>
-                            </div>
-    <div class="mt-4">
-        <p id="stop-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
-        <div class="flex gap-2">
-            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('stop')">Frase</button>
-            <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('stop')">Grabar</button>
-            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('stop')">Detener</button>
-        </div>
-        <p id="stop-result" class="text-sm text-blue-700 mt-1"></p>
-    </div>
-                        </div>
-                        <div class="md:w-1/3">
-                            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
-                                <div class="text-8xl mb-4">✋</div>
-                                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Recuerda que pausar no es fracasar. Las pausas estratégicas denotan seguridad y control, no indecisión.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<div id="generalization-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-        </svg>
-        Volver a técnicas
-    </button>
-    <h2 class="text-2xl font-bold text-blue-600 mb-4">Generalización</h2>
-    <div class="flex flex-col md:flex-row gap-8">
-        <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
-              <p class="mb-4 text-gray-700">Aplicar todas las técnicas en situaciones cotidianas para hablar con conciencia en contextos reales.</p>
-            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
-            <div class="bg-blue-50 rounded-lg p-4">
-                <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                      <li>Elige un tema cotidiano (familia, estudios, clima) y habla aplicando las técnicas</li>
-                      <li>Practica en diversos contextos: teléfono, reuniones, conversaciones informales</li>
-                      <li>Anota qué técnica te resulta más ú til en cada situación</li>
-                </ul>
-            </div>
-            <div class="mt-4">
-                <p id="generalization-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
-                <div class="flex gap-2">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('generalization')">Frase</button>
-                    <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('generalization')">Grabar</button>
-                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('generalization')">Detener</button>
-                </div>
-                <p id="generalization-result" class="text-sm text-blue-700 mt-1"></p>
-            </div>
-        </div>
-        <div class="md:w-1/3">
-            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
-                <div class="text-8xl mb-4">🌐</div>
-                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Integra la práctica en tu día a día para consolidar resultados.</p>
-            </div>
-        </div>
-    </div>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
 </div>
-<div id="continuous-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-        </svg>
-        Volver a técnicas
-    </button>
-    <h2 class="text-2xl font-bold text-blue-600 mb-4">Fonación continuada</h2>
-    <div class="flex flex-col md:flex-row gap-8">
-        <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
-              <p class="mb-4 text-gray-700">Se trata de enlazar una palabra que termina en vocal con otra que empieza por vocal, reduciendo las mini-pausas y los posibles bloqueos.</p>
-            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
-            <div class="bg-blue-50 rounded-lg p-4">
-                <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                      <li>Una ola azul</li>
-                      <li>Un elefante enorme</li>
-                      <li>Mi hermana acelera el carro</li>
-                      <li>A estas alturas hubiera hecho eso</li>
-                </ul>
-            </div>
-            <div class="mt-4">
-                <p id="continuous-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
-                <div class="flex gap-2">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('continuous')">Frase</button>
-                    <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('continuous')">Grabar</button>
-                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('continuous')">Detener</button>
-                </div>
-                <p id="continuous-result" class="text-sm text-blue-700 mt-1"></p>
-            </div>
-        </div>
-        <div class="md:w-1/3">
-            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
-                <div class="text-8xl mb-4">➿</div>
-                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Imagina que tu voz es una cinta que no se corta.</p>
-            </div>
-        </div>
-    </div>
+<div class="flex flex-col items-center">
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-tight">Técnica de Habla</h2>
+<span class="text-xs text-primary font-medium">Sesión 1: Prolongación</span>
 </div>
-<div id="intonation-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-        </svg>
-        Volver a técnicas
-    </button>
-    <h2 class="text-2xl font-bold text-blue-600 mb-4">Entonación</h2>
-    <div class="flex flex-col md:flex-row gap-8">
-        <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
-              <p class="mb-4 text-gray-700">Aprender a variar la frecuencia y el tono de la voz para unir mejor las palabras y evitar bloqueos.</p>
-            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
-            <div class="bg-blue-50 rounded-lg p-4">
-                <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                      <li>Pronuncia "BAM" subiendo y bajando la voz</li>
-                      <li>Lee un cuento, un texto informativo y un poema notando la entonación</li>
-                      <li>Usa curvas melódicas diferentes al decir cada frase</li>
-                </ul>
-            </div>
-            <div class="mt-4">
-                <p id="intonation-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
-                <div class="flex gap-2">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('intonation')">Frase</button>
-                    <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('intonation')">Grabar</button>
-                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('intonation')">Detener</button>
-                </div>
-                <p id="intonation-result" class="text-sm text-blue-700 mt-1"></p>
-            </div>
-        </div>
-        <div class="md:w-1/3">
-            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
-                <div class="text-8xl mb-4">🎵</div>
-                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Exagera la melodía para luego ajustar a un tono natural.</p>
-            </div>
-        </div>
-    </div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-xl h-12 bg-transparent text-primary">
+<span class="material-symbols-outlined">help</span>
+</button>
 </div>
-<div id="breathing-detail" class="technique-detail bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-    <button onclick="hideTechnique()" class="mb-4 flex items-center text-blue-500 hover:text-blue-700">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-        </svg>
-        Volver a técnicas
-    </button>
-    <h2 class="text-2xl font-bold text-blue-600 mb-4">Coordinación fono-respiratoria</h2>
-    <div class="flex flex-col md:flex-row gap-8">
-        <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-3 text-blue-500">¿En qué consiste?</h3>
-              <p class="mb-4 text-gray-700">Aprender a gestionar el aire segúan lo que vayamos a decir. No se trata de llenar los pulmones, sino de saber cuándo inspirar antes de que se acabe.</p>
-            <h3 class="text-xl font-semibold mb-3 text-blue-500">Ejercicios sugeridos</h3>
-            <div class="bg-blue-50 rounded-lg p-4">
-                <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                      <li>Lee frases de distintas longitudes tomando el aire necesario y dejando un poco de reserva</li>
-                      <li>Evita inspirar a mitad de frase</li>
-                      <li>Cuenta una anécdota controlando la respiración</li>
-                </ul>
-            </div>
-            <div class="mt-4">
-                <p id="breathing-phrase" class="mb-2 text-gray-700">Presiona "Frase" para practicar</p>
-                <div class="flex gap-2">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded" onclick="generatePhrase('breathing')">Frase</button>
-                    <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded" onclick="startRecording('breathing')">Grabar</button>
-                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" onclick="stopRecording('breathing')">Detener</button>
-                </div>
-                <p id="breathing-result" class="text-sm text-blue-700 mt-1"></p>
-            </div>
-        </div>
-        <div class="md:w-1/3">
-            <div class="bg-blue-100 p-6 rounded-lg h-full flex flex-col items-center justify-center">
-                <div class="text-8xl mb-4">🌬️</div>
-                <p class="text-gray-700 text-center"><strong>Consejo:</strong> Deja que tu respiración marque el ritmo de tus palabras.</p>
-            </div>
-        </div>
-    </div>
 </div>
-        </section>
-
-        <!-- Exercises Section -->
-        <section id="exercises" class="section">
-            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                <h2 class="text-3xl font-bold text-blue-600 mb-6">Ejercicios prácticos</h2>
-                <p class="text-gray-700 mb-8">Explora estos ejercicios interactivos para practicar técnicas de fluidez. Elige categorías según tu edad y preferencias.</p>
-                
-                <div class="grid md:grid-cols-2 gap-8 mb-8">
-                    <!-- Syllable Generator -->
-                    <div class="bg-blue-50 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold mb-4 text-blue-600">Generador de sílabas</h3>
-                        <p class="text-gray-700 mb-4">Práctica repitiendo combinaciones de sílabas aleatorias para trabajar la articulación y coordinación.</p>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2">Nivel de dificultad:</label>
-                            <div class="flex gap-2 mb-4">
-                                <button onclick="setDifficulty('easy')" class="difficulty-btn px-4 py-2 rounded-full bg-blue-100 text-blue-800 border border-blue-200 hover:bg-blue-200">Fácil</button>
-                                <button onclick="setDifficulty('medium')" class="difficulty-btn px-4 py-2 rounded-full bg-blue-100 text-blue-800 border border-blue-200 hover:bg-blue-200">Medio</button>
-                                <button onclick="setDifficulty('hard')" class="difficulty-btn px-4 py-2 rounded-full bg-blue-100 text-blue-800 border border-blue-200 hover:bg-blue-200">Difícil</button>
-                            </div>
-                        </div>
-                        
-                        <div id="syllable-display" class="speech-bubble text-center p-6 mb-4 text-2xl font-bold min-h-20 flex items-center justify-center">
-                            Presiona "Generar" para comenzar
-                        </div>
-                        
-                        <div class="flex gap-3 justify-center">
-                            <button onclick="generateSyllables()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg">
-                                Generar
-                            </button>
-                            <button onclick="hideSyllable()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg">
-                                Ocultar
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Conversation Topics -->
-                    <div class="bg-green-50 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold mb-4 text-green-600">Temas de conversación</h3>
-                        <p class="text-gray-700 mb-4">Practica hablando sobre diferentes temas según tu grupo de edad.</p>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2">Edad:</label>
-                            <div class="flex gap-2 flex-wrap mb-4">
-                                <button onclick="setAgeGroup('child')" class="age-btn px-4 py-2 rounded-full bg-green-100 text-green-800 border border-green-200 hover:bg-green-200">Niño (6-12)</button>
-                                <button onclick="setAgeGroup('teen')" class="age-btn px-4 py-2 rounded-full bg-green-100 text-green-800 border border-green-200 hover:bg-green-200">Adolescente (13-18)</button>
-                                <button onclick="setAgeGroup('adult')" class="age-btn px-4 py-2 rounded-full bg-green-100 text-green-800 border border-green-200 hover:bg-green-200">Adulto (18+)</button>
-                            </div>
-                        </div>
-                        
-                        <div id="topic-display" class="speech-bubble text-center p-6 mb-4 text-lg min-h-20 flex items-center justify-center">
-                            Selecciona tu edad y obtén un tema
-                        </div>
-                        
-                        <div class="flex gap-3 justify-center">
-                            <button onclick="generateTopic()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg">
-                                Nuevo tema
-                            </button>
-                            <button onclick="hideTopic()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg">
-                                Ocultar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Practice Diary -->
-                <div class="bg-yellow-50 rounded-lg p-6 mb-6 border border-yellow-200">
-                    <h3 class="text-xl font-semibold mb-4 text-yellow-700">Diario de práctica</h3>
-                    <p class="text-gray-700 mb-4">Lleva un registro de tus ejercicios diarios para monitorear tu progreso.</p>
-                    
-                    <div class="mb-4">
-                        <label class="block text-gray-700 mb-2">Fecha:</label>
-                        <input type="date" id="practice-date" class="border rounded-lg px-3 py-2 w-full max-w-xs">
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label class="block text-gray-700 mb-2">Técnica practicada:</label>
-                        <select id="technique-select" class="border rounded-lg px-3 py-2 w-full max-w-xs">
-                            <option value="soft-start">Inicio suave</option>
-                            <option value="smoothing">Suavización</option>
-                            <option value="slow-down">Enlentecimiento</option>
-                            <option value="breathing">Coordinación fono-respiratoria</option>
-                            <option value="intonation">Entonación</option>
-                            <option value="continuous">Fonación continuada</option>
-                            <option value="generalization">Generalización</option>
-                            <option value="stop">Técnica STOP</option>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label class="block text-gray-700 mb-2">Reflexión:</label>
-                        <textarea id="practice-reflection" rows="3" class="border rounded-lg px-3 py-2 w-full" placeholder="¿Cómo te sentiste durante la práctica? ¿Qué fue fácil/difícil?"></textarea>
-                    </div>
-                    
-                    <button onclick="savePractice()" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg">
-                        Guardar práctica
-                    </button>
-                    
-                    <div id="practice-entries" class="mt-6 space-y-4">
-                        <!-- Previous entries will appear here -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section id="about-us" class="section">
-            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                <h2 class="text-3xl font-bold text-blue-600 mb-6">Sobre nosotros</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-blue-500">Nuestra misión</h3>
-                        <p class="mb-4 text-gray-700">SIN TRABAS nace como una iniciativa para proporcionar recursos accesibles y de calidad sobre disfemia (tartamudez) para hispanohablantes de todas las edades.</p>
-                        <p class="mb-4 text-gray-700">Creemos que la información y las herramientas prácticas pueden empoderar a las personas con disfemia y a sus familias para mejorar la comunicación y calidad de vida.</p>
-                    </div>
-                    <div class="flex justify-center">
-                        <div class="bg-blue-100 rounded-full w-48 h-48 flex items-center justify-center">
-                            <div class="text-6xl">👥</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <h3 class="text-xl font-semibold mb-3 text-blue-500">Nuestro enfoque</h3>
-                <div class="grid md:grid-cols-3 gap-4 mb-6">
-                    <div class="border border-blue-200 rounded-lg p-4 bg-white">
-                        <div class="text-3xl mb-2">🌱</div>
-                        <h4 class="font-semibold mb-1">Basado en evidencia</h4>
-                        <p class="text-sm text-gray-600">Técnicas respaldadas por investigaciones en patología del lenguaje.</p>
-                    </div>
-                    <div class="border border-blue-200 rounded-lg p-4 bg-white">
-                        <div class="text-3xl mb-2">❤️</div>
-                        <h4 class="font-semibold mb-1">Enfoque integral</h4>
-                        <p class="text-sm text-gray-600">Consideramos aspectos emocionales, sociales y cognitivos.</p>
-                    </div>
-                    <div class="border border-blue-200 rounded-lg p-4 bg-white">
-                        <div class="text-3xl mb-2">🎯</div>
-                        <h4 class="font-semibold mb-1">Práctico</h4>
-                        <p class="text-sm text-gray-600">Ejercicios diseñados para la aplicación en vida cotidiana.</p>
-                    </div>
-                </div>
-                
-                <h3 class="text-xl font-semibold mb-3 text-blue-500">Aviso importante</h3>
-                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                    <div class="flex">
-                        <div class="flex-shrink-0">⚠️</div>
-                        <div class="ml-3">
-                            <p class="text-sm text-yellow-700"><strong>Nota:</strong> Este sitio web no sustituye la evaluación y tratamiento por un profesional cualificado. Recomendamos siempre consultar con un fonoaudiólogo o logopeda especializado en disfemia para un abordaje personalizado.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
-                <h2 class="text-3xl font-bold text-blue-600 mb-6">Contacto</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-blue-500">¿Tienes preguntas o sugerencias?</h3>
-                        <p class="mb-4 text-gray-700">Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo.</p>
-                        
-                        <form id="contact-form" class="space-y-4">
-                            <div>
-                                <label for="name" class="block text-gray-700 mb-1">Nombre:</label>
-                                <input type="text" id="name" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200">
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-gray-700 mb-1">Correo electrónico:</label>
-                                <input type="email" id="email" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200">
-                            </div>
-                            
-                            <div>
-                                <label for="subject" class="block text-gray-700 mb-1">Asunto:</label>
-                                <select id="subject" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200">
-                                    <option value="question">Consulta</option>
-                                    <option value="suggestion">Sugerencia</option>
-                                    <option value="feedback">Comentario</option>
-                                    <option value="other">Otro</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-gray-700 mb-1">Mensaje:</label>
-                                <textarea id="message" rows="4" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"></textarea>
-                            </div>
-                            
-                            <button type="button" onclick="submitContact()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg">
-                                Enviar mensaje
-                            </button>
-                        </form>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-blue-500">Recursos adicionales</h3>
-                        <div class="space-y-4">
-                            <div class="p-4 bg-gray-50 rounded-lg">
-                                <h4 class="font-semibold flex items-center">
-                                    <span class="text-2xl mr-2">📖</span> Asociaciones
-                                </h4>
-                                <p class="text-sm mt-2 text-gray-600">Te recomendamos contactar con asociaciones locales de tartamudez en tu país para apoyo grupal y recursos adicionales.</p>
-                            </div>
-                            
-                            <div class="p-4 bg-gray-50 rounded-lg">
-                                <h4 class="font-semibold flex items-center">
-                                    <span class="text-2xl mr-2">📚</span> Libros recomendados
-                                </h4>
-                                <ul class="text-sm mt-2 text-gray-600 list-disc pl-5 space-y-1">
-                                    <li>"Autoterapia para la tartamudez" - Malcolm Fraser</li>
-                                    <li>"Hablar con fluidez" - Hugo Cogo Marra</li>
-                                    <li>"La tartamudez: guía de prevención y tratamiento infantil" - Marc Monfort</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="p-4 bg-gray-50 rounded-lg">
-                                <h4 class="font-semibold flex items-center">
-                                    <span class="text-2xl mr-2">🎙️</span> Podcasts
-                                </h4>
-                                <p class="text-sm mt-2 text-gray-600">Busca podcasts sobre disfemia para escuchar testimonios y consejos de profesionales y personas que viven con tartamudez.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-blue-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <div class="flex items-center">
-                        <div class="text-3xl mr-2">🗣️</div>
-                        <h2 class="text-xl font-bold">SIN TRABAS</h2>
-                    </div>
-                    <p class="text-sm mt-2 text-blue-200">Recursos para la fluidez del habla</p>
-                </div>
-                
-                <div class="text-center md:text-right">
-                    <p class="text-sm text-blue-200">© 2023 SIN TRABAS. Todos los derechos reservados.</p>
-                    <p class="text-xs mt-1 text-blue-300">Este sitio es solo con fines educativos. Consulta a un profesional para diagnóstico y tratamiento.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js"></script>
-
-</body>
-</html>
+</header>
+<main class="flex-1 flex flex-col max-w-md mx-auto w-full pb-10">
+<!-- Instruction Header -->
+<div class="px-4 py-6">
+<h1 class="text-[#111418] dark:text-white tracking-tight text-2xl font-extrabold leading-tight text-center">Vocalización Suave</h1>
+<p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal mt-2 text-center">
+                Alarga la primera vocal de forma fluida y rítmica para reducir la tensión.
+            </p>
+</div>
+<!-- Session Progress Indicator -->
+<div class="px-4 mb-6">
+<div class="bg-gray-200 dark:bg-gray-800 h-1.5 w-full rounded-full overflow-hidden">
+<div class="bg-primary h-full w-2/5 rounded-full"></div>
+</div>
+<div class="flex justify-between mt-2 px-1">
+<span class="text-xs text-gray-500">Progreso diario</span>
+<span class="text-xs font-bold text-primary">4/10 palabras</span>
+</div>
+</div>
+<!-- Main Interaction Card -->
+<div class="px-4 flex-1">
+<div class="relative overflow-hidden flex flex-col items-center justify-center rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#1a2530] p-8 aspect-[4/5] md:aspect-auto min-h-[400px]">
+<!-- Word Display -->
+<div class="text-center mb-12">
+<p class="text-gray-400 dark:text-gray-500 text-sm font-medium uppercase tracking-widest mb-4">Palabra actual</p>
+<div class="flex items-baseline justify-center gap-1">
+<span class="text-4xl md:text-5xl font-bold text-primary tracking-widest">H-o-o-o</span>
+<span class="text-4xl md:text-5xl font-bold text-[#111418] dark:text-white tracking-widest">la</span>
+</div>
+</div>
+<!-- Visual Stretching Animation Area -->
+<div class="w-full flex flex-col items-center gap-8">
+<!-- The "Stretcher" Visual Guide -->
+<div class="relative w-full h-24 flex items-center justify-center bg-primary/5 dark:bg-primary/10 rounded-xl px-4">
+<div class="absolute inset-0 flex items-center justify-around opacity-20 pointer-events-none">
+<div class="w-px h-8 bg-primary"></div>
+<div class="w-px h-8 bg-primary"></div>
+<div class="w-px h-8 bg-primary"></div>
+</div>
+<!-- Pulse/Indicator -->
+<div class="h-16 w-16 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30 z-10">
+<span class="material-symbols-outlined text-white text-3xl">mic</span>
+</div>
+<!-- Stretch Visualization (representing current progress) -->
+<div class="absolute left-1/2 -translate-x-1/2 h-4 bg-primary/20 rounded-full w-3/4">
+<div class="h-full bg-primary rounded-full w-[45%]"></div>
+</div>
+</div>
+<!-- Slider Feedback -->
+<div class="w-full">
+<div class="flex justify-between items-center mb-2">
+<p class="text-[#111418] dark:text-white text-sm font-semibold">Duración del estiramiento</p>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-bold tracking-tight">3.2s / 5.0s</span>
+</div>
+<div class="flex h-3 w-full items-center gap-4">
+<div class="flex h-2 flex-1 rounded-full bg-gray-100 dark:bg-gray-800">
+<div class="h-full w-[64%] rounded-full bg-primary relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 size-5 rounded-full bg-primary ring-4 ring-white dark:ring-[#1a2530] shadow-md"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Guidance Button -->
+<div class="mt-12 w-full">
+<button class="w-full flex items-center justify-center gap-2 rounded-xl h-14 bg-primary/10 hover:bg-primary/20 text-primary font-bold transition-colors">
+<span class="material-symbols-outlined">volume_up</span>
+<span>Escuchar Guía</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="px-6 py-8 flex flex-col gap-4">
+<div class="flex gap-4">
+<button class="flex-1 flex flex-col items-center justify-center gap-1 rounded-xl h-24 bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-gray-400">refresh</span>
+<span class="text-sm font-medium text-gray-600 dark:text-gray-300">Cambiar</span>
+</button>
+<button class="flex-[2] flex items-center justify-center gap-3 rounded-xl h-24 bg-primary text-white shadow-lg shadow-primary/25 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">play_circle</span>
+<span class="text-lg font-bold">Iniciar</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center gap-1 rounded-xl h-24 bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-gray-400">check_circle</span>
+<span class="text-sm font-medium text-gray-600 dark:text-gray-300">Logrado</span>
+</button>
+</div>
+<p class="text-center text-gray-400 text-xs py-2 italic font-medium">
+                Consejo: Mantén los hombros relajados y exhala suavemente.
+            </p>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="pb-8 pt-2 px-6 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800">
+<div class="flex justify-around items-center max-w-md mx-auto">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">exercise</span>
+<span class="text-[10px] font-bold">Práctica</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium">Progreso</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">school</span>
+<span class="text-[10px] font-medium">Cursos</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Perfil</span>
+</div>
+</div>
+</nav>
+</body></html>
