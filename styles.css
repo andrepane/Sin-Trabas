@@ -1,0 +1,29 @@
+body {
+  font-family: "Manrope", sans-serif;
+  min-height: max(884px, 100dvh);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.material-symbols-filled {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.hero-background {
+  background-image: linear-gradient(
+      rgba(19, 127, 236, 0.6) 0%,
+      rgba(19, 127, 236, 0.8) 100%
+    ),
+    url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeiGDkpt8HGO7cBEsb_YjoUAmur_5Gye4GIrCpIveluU4zK48oI7PZjEk9V-O5A_fs5T7dVvRpJ0BPj4S4iK65Ft1pXnp-dwqvqf2zmKpzG_SfpfiM3AJdTZplWQxPLBJHSJlGStvIkIf3thOZkXvvGvibZwnmRa1Nes_jKk7CnjRgBb2FpukQkTIH0Y_PrT6hiAelMgS0TFqTpw7sYgmYrrNB0lJhu_cVS2OaDHdomFdeUs_mkurp4rWE_Z9MaiiKFIvVW9Wx7Kw");
+}
+
+.sentence-card-gradient {
+  background-image: linear-gradient(135deg, #137fec 0%, #0b5fb3 100%);
+}
+
+.profile-avatar-image {
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRhF6W_Od2b0YzxLsZ4G52qOmymOQAc3_x6i3R1bELOyeVoNhM2mOilzUEWA4xQX4S_silwLOVtvmKgFXklZ4eQhCIpDy9RCWRwywCsKodtprt20LWlebP3BvSuZix8PzU7jkvu3LuKhPplK2AbrQUAq8W15L1QcD_DF0lDMffYS6nFu3Ggj22SdZRZymR7Y4f1UM6R0akhulho3H_SyijlMtt9dAIY94i2lJxr7MUoGOscYkzc14QTXsFR56uC5Uk_PE1TETdof8");
+}
